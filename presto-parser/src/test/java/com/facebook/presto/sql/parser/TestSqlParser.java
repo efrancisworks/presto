@@ -1951,6 +1951,17 @@ public class TestSqlParser
     }
 
     @Test
+    public void testNoWith()
+    {
+        assertStatement("SELECT * FROM t",
+                simpleQuery(
+                        selectList(new AllColumns()),
+                        table(QualifiedName.of("t"))));
+
+        assertInvalidStatement("SELECT * FORM table_name", ".*mismatched input.*");
+    }
+
+    @Test
     public void testImplicitJoin()
     {
         assertStatement("SELECT * FROM a, b",
@@ -2358,7 +2369,7 @@ public class TestSqlParser
             assertStatement(format("SHOW STATS FOR %s", qualifiedName), new ShowStats(new Table(qualifiedName)));
         }
     }
-
+    //done
     @Test
     public void testShowStatsForQuery()
     {
