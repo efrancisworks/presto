@@ -1,0 +1,89 @@
+openapi: 3.0.1
+info:
+  version: '0.287'
+  title: Presto Client REST API
+  description: >-
+    The Presto client allows users to submit Presto queries and view results.
+    This note documents the REST API used by the Presto client.
+paths:
+  /v1/node:
+    get:
+      description:
+        "Returns a list of nodes known to a Presto Server."
+      responses:
+        '200':
+          description: "list of nodes known to a Presto Server"
+          content:
+            'text/javascript':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Node'
+
+  /v1/node/failed:
+    get:
+      description:
+        "Returns a list of nodes known to a Presto Server."
+      responses:
+        '200':
+          description: "list of nodes known to a Presto Server"
+          content:
+            'text/javascript':
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Node'
+
+
+components:
+  schemas:
+    Node:
+      type: object
+      properties:
+        uri:
+          type: string
+          format: url
+          example: "http://10.209.57.156:8080"
+        recentRequests:
+          type: number
+          format: float
+          example: 25.181940555111073
+        recentFailures:
+          type: number
+          format: float
+          example: 0.0
+        recentSuccesses:
+          type: number
+          format: float
+          example: 25.195472984170983
+        lastRequestTime:
+          type: string
+          format: date-time
+          example: "2013-12-22T13:32:44.673-05:00"
+        lastResponseTime:
+          type: string
+          format: date-time
+          example: "2013-12-22T13:32:44.677-05:00"
+        age:
+          type: string
+          example: "14155.28ms"
+        recentFailureRatio:
+          type: number
+          format: float
+          example: 0.0
+        recentFailuresByType:
+          type: object
+          additionalProperties:
+            type: integer
+            example: {}
+
+
+
+
+    QueryResource:
+      type: object
+      properties:
+        id:
+          type: integer
+          format: int64
+      description: The Query REST service is the most complex of the rest services. It contains detailed information about nodes, and other details that capture the state and history of a query being executed on a Presto installation.
