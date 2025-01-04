@@ -337,3 +337,66 @@ The corresponding configuration property is :ref:`admin/properties:\`\`optimizer
 Enable retry for failed queries who can potentially be helped by HBO. 
 
 The corresponding configuration property is :ref:`admin/properties:\`\`optimizer.retry-query-with-history-based-optimization\`\``. 
+
+JDBC Properties
+--------------------
+
+``allowDropTable``
+^^^^^^^^^^^^^^^^^^
+
+* **Type:** ``boolean``
+* **Default value:** ``false``
+
+Allow connector to drop tables.
+
+The corresponding configuration property is :ref:`admin/properties:\`\`optimizer.treat-low-confidence-zero-estimation-as-unknown\`\``.
+
+``metadataCacheTtl``
+^^^^^^^^^^^^^^^^^^^^
+
+* **Type:** ``Duration``
+* **Default value:** ``0``
+
+Enable treating ``LOW`` confidence, zero estimations as ``UNKNOWN`` during joins.
+
+The corresponding configuration property is :ref:`admin/properties:\`\`optimizer.treat-low-confidence-zero-estimation-as-unknown\`\``.
+
+``metadataCacheRefreshInterval``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* **Type:** ``Duration``
+* **Default value:** ``0``
+
+Enable treating ``LOW`` confidence, zero estimations as ``UNKNOWN`` during joins.
+
+The corresponding configuration property is :ref:`admin/properties:\`\`optimizer.treat-low-confidence-zero-estimation-as-unknown\`\``.
+
+``metadataCacheMaximumSize``
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* **Type:** ``boolean``
+* **Default value:** ``false``
+
+Enable treating ``LOW`` confidence, zero estimations as ``UNKNOWN`` during joins.
+
+The corresponding configuration property is :ref:`admin/properties:\`\`optimizer.treat-low-confidence-zero-estimation-as-unknown\`\``.
+
+``metadataCacheThreadPoolSize``
+^^^^^^^^^^^^^^^^^^
+
+* **Type:** ``boolean``
+* **Default value:** ``false``
+
+Enable treating ``LOW`` confidence, zero estimations as ``UNKNOWN`` during joins.
+
+The corresponding configuration property is :ref:`admin/properties:\`\`optimizer.treat-low-confidence-zero-estimation-as-unknown\`\``.
+
+``jdbcMetadataCacheEnabled``
+^^^^^^^^^^^^^^^^^^
+
+* **Type:** ``boolean``
+* **Default value:** ``false``
+
+Enable treating ``LOW`` confidence, zero estimations as ``UNKNOWN`` during joins.
+
+The corresponding configuration property is :ref:`admin/properties:\`\`optimizer.treat-low-confidence-zero-estimation-as-unknown\`\``.
